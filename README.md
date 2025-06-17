@@ -1,2 +1,120 @@
 # lesson-5
 oop5 recursive function
+
+
+🔁 1. הדפסת מספרים בסדר עולה ויורד באמצעות רקורסיה
+1.1 print_x_rev(x)
+מדפיס את המספרים מ־1 עד x בסדר עולה, אבל הפונקציה עצמה כתובה כך שנראית כשיורדים מרקורסיה:
+
+python
+Copy
+Edit
+def print_x_rev(x):
+    if x == 0:
+        return
+    print_x_rev(x - 1)
+    print(x, end=' ')
+פירוט:
+
+רקורסיה יורדת עד 0, ואז בכל חזרה מהקריאה המדורגת היא מדפיסה את הערך.
+
+כלומר, הקריאה print_x_rev(10) תדפיס:
+1 2 3 4 5 6 7 8 9 10
+
+1.2 print_x_asc(x)
+מדפיס את המספרים מ־10 עד x בסדר יורד, באמצעות רקורסיה:
+
+python
+Copy
+Edit
+def print_x_asc(x):
+    if x == 11:
+        return
+    print_x_asc(x + 1)
+    print(x, end=' ')
+פירוט:
+
+הפונקציה "דוחפת" את עצמה קדימה עד x==11, ואז מתחילה לחזור לאחור ולהדפיס.
+
+הקריאה print_x_asc(1) תדפיס:
+10 9 8 7 6 5 4 3 2 1
+
+➕ 2. חיבור של שני מספרים באמצעות רקורסיה
+2.1 add_recur(x, y)
+python
+Copy
+Edit
+def add_recur(x, y):
+    if y == 0:
+        return x
+    return add_recur(x + 1, y - 1)
+מה קורה פה?
+
+פונקציה שמדמה את פעולת החיבור בלי להשתמש באופרטור + (רק פעם אחת).
+
+כל קריאה מוסיפה 1 ל־x ומפחיתה 1 מ־y עד ש־y מגיע ל־0.
+
+לדוגמה: add_recur(4, 3) מחזיר 7.
+
+2.2 add_recur_1(x, y)
+python
+Copy
+Edit
+def add_recur_1(x, y):
+    if y == 0:
+        return x
+    return 1 + add_recur_1(x, y - 1)
+הבדל מהקוד הקודם:
+כאן בכל שלב מוסיפים 1 חיצונית לקריאה הרקורסיבית. זה מעניין כי מראה דרך אחרת לאותו רעיון.
+
+🔢 3. סכום ספרות של מספר – sum_digits(x)
+python
+Copy
+Edit
+def sum_digits(x):
+    if x < 10:
+        print(f"{x} = ", end='')
+        return x
+    ahadot = x % 10
+    print(f"{ahadot} + ", end='')
+    return ahadot + sum_digits(x // 10)
+מה קורה כאן?
+
+מחלקים את המספר לספרת אחדות והשאר, מוסיפים את האחדות לסכום וחוזרים רקורסיבית על השאר.
+
+הפונקציה גם מדפיסה את התהליך:
+
+למשל: sum_digits(473820) →
+0 + 2 + 8 + 3 + 7 + 4 = 24
+
+🔎 4. בדיקת הופעה של תו במחרוזת – check_if_is_in(c, line)
+python
+Copy
+Edit
+def check_if_is_in(c: str, line: str):
+    if len(line) == 0:
+        return False
+    if line[0] == c:
+        return True
+    return check_if_is_in(c, line[1:])
+מה זה עושה?
+
+בודק אם התו c נמצא במחרוזת line באופן רקורסיבי.
+
+כל פעם בודק את התו הראשון, ואם לא – קורא את עצמו על שאר המחרוזת.
+
+דוגמאות מהקוד:
+
+python
+Copy
+Edit
+check_if_is_in("a", "babc")       → True
+check_if_is_in("a", "dfjh")       → False
+🧠 סיכום עקרונות חשובים שהודגמו בקובץ:
+פונקציה	פעולה עיקרית	עקרונות
+print_x_rev(x)	הדפסת מספרים מ־1 עד x	רקורסיה "עולה" לאחר הגעה לבסיס
+print_x_asc(x)	הדפסת מספרים מ־10 עד x	רקורסיה יורדת ואחריה הדפסה
+add_recur(x, y)	חיבור דרך הגדלה	שימוש חוזר בקריאה עצמית כדי להגדיל
+sum_digits(x)	סכום ספרות	שימוש בחלוקה ואחוז לבידוד ספרות
+check_if_is_in(c, line)	חיפוש תו	חיפוש דרך בדיקה וחתיכה של המחרוזת
+
