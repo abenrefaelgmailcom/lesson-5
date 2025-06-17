@@ -6,9 +6,7 @@ oop5 recursive function
 1.1 print_x_rev(x)
 מדפיס את המספרים מ־1 עד x בסדר עולה, אבל הפונקציה עצמה כתובה כך שנראית כשיורדים מרקורסיה:
 
-python
-Copy
-Edit
+
 def print_x_rev(x):
     if x == 0:
         return
@@ -24,9 +22,7 @@ def print_x_rev(x):
 1.2 print_x_asc(x)
 מדפיס את המספרים מ־10 עד x בסדר יורד, באמצעות רקורסיה:
 
-python
-Copy
-Edit
+
 def print_x_asc(x):
     if x == 11:
         return
@@ -41,9 +37,7 @@ def print_x_asc(x):
 
 ➕ 2. חיבור של שני מספרים באמצעות רקורסיה
 2.1 add_recur(x, y)
-python
-Copy
-Edit
+
 def add_recur(x, y):
     if y == 0:
         return x
@@ -57,9 +51,7 @@ def add_recur(x, y):
 לדוגמה: add_recur(4, 3) מחזיר 7.
 
 2.2 add_recur_1(x, y)
-python
-Copy
-Edit
+
 def add_recur_1(x, y):
     if y == 0:
         return x
@@ -68,9 +60,7 @@ def add_recur_1(x, y):
 כאן בכל שלב מוסיפים 1 חיצונית לקריאה הרקורסיבית. זה מעניין כי מראה דרך אחרת לאותו רעיון.
 
 🔢 3. סכום ספרות של מספר – sum_digits(x)
-python
-Copy
-Edit
+
 def sum_digits(x):
     if x < 10:
         print(f"{x} = ", end='')
@@ -88,9 +78,7 @@ def sum_digits(x):
 0 + 2 + 8 + 3 + 7 + 4 = 24
 
 🔎 4. בדיקת הופעה של תו במחרוזת – check_if_is_in(c, line)
-python
-Copy
-Edit
+
 def check_if_is_in(c: str, line: str):
     if len(line) == 0:
         return False
@@ -105,9 +93,7 @@ def check_if_is_in(c: str, line: str):
 
 דוגמאות מהקוד:
 
-python
-Copy
-Edit
+
 check_if_is_in("a", "babc")       → True
 check_if_is_in("a", "dfjh")       → False
 🧠 סיכום עקרונות חשובים שהודגמו בקובץ:
