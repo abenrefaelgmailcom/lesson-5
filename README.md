@@ -3,6 +3,7 @@ oop5 recursive function
 
 
 🔁 1. הדפסת מספרים בסדר עולה ויורד באמצעות רקורסיה
+
 1.1 print_x_rev(x)
 מדפיס את המספרים מ־1 עד x בסדר עולה, אבל הפונקציה עצמה כתובה כך שנראית כשיורדים מרקורסיה:
 
@@ -36,6 +37,7 @@ def print_x_asc(x):
 10 9 8 7 6 5 4 3 2 1
 
 ➕ 2. חיבור של שני מספרים באמצעות רקורסיה
+
 2.1 add_recur(x, y)
 
 def add_recur(x, y):
@@ -61,6 +63,7 @@ def add_recur_1(x, y):
 
 🔢 3. סכום ספרות של מספר – sum_digits(x)
 
+
 def sum_digits(x):
     if x < 10:
         print(f"{x} = ", end='')
@@ -78,6 +81,7 @@ def sum_digits(x):
 0 + 2 + 8 + 3 + 7 + 4 = 24
 
 🔎 4. בדיקת הופעה של תו במחרוזת – check_if_is_in(c, line)
+
 
 def check_if_is_in(c: str, line: str):
     if len(line) == 0:
